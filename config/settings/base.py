@@ -39,7 +39,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///shippers_owned_container_tracker'),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'centrans_soc_tracker',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+    }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -71,7 +77,8 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'shippers_owned_container_tracker.users.apps.UsersAppConfig',
-    # Your stuff: custom apps go here
+    'operators.apps.OperatorsConfig',
+    'trackers.apps.TrackersConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -99,16 +106,13 @@ LOGIN_URL = 'account_login'
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#password-hashers
 PASSWORD_HASHERS = [
-    # https://docs.djangoproject.com/en/dev/topics/auth/passwords/#using-argon2-with-django
     'django.contrib.auth.hashers.Argon2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.BCryptPasswordHasher',
 ]
-# https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
