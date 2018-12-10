@@ -1,0 +1,5 @@
+[run]
+include = shippers_owned_container_tracker/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
