@@ -1,6 +1,6 @@
 from django.urls import path
 
-from shippers_owned_container_tracker.users.views import (
+from mysite.users.views import (
     user_list_view,
     user_redirect_view,
     user_update_view,

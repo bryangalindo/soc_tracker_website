@@ -23,8 +23,8 @@ if __name__ == "__main__":
         raise
 
     # This allows easy placement of apps within the interior
-    # shippers_owned_container_tracker directory.
+    # mysite directory.
     current_path = os.path.dirname(os.path.abspath(__file__))
-    sys.path.append(os.path.join(current_path, "shippers_owned_container_tracker"))
+    sys.path.append(os.path.join(current_path, "mysite"))
 
     execute_from_command_line(sys.argv)

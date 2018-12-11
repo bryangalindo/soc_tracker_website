@@ -2,7 +2,7 @@ import pytest
 from django.conf import settings
 from django.test import RequestFactory
 
-from shippers_owned_container_tracker.users.views import UserRedirectView, UserUpdateView
+from mysite.users.views import UserRedirectView, UserUpdateView
 
 pytestmark = pytest.mark.django_db
 

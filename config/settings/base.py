@@ -4,8 +4,8 @@ Base settings to build other settings files upon.
 
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # (shippers_owned_container_tracker/config/settings/base.py - 3 = shippers_owned_container_tracker/)
-APPS_DIR = ROOT_DIR.path('shippers_owned_container_tracker')
+ROOT_DIR = environ.Path(__file__) - 3  # (mysite/config/settings/base.py - 3 = mysite/)
+APPS_DIR = ROOT_DIR.path('mysite')
 
 env = environ.Env()
 
@@ -76,8 +76,9 @@ THIRD_PARTY_APPS = [
     'rest_framework',
 ]
 LOCAL_APPS = [
-    'shippers_owned_container_tracker.users.apps.UsersAppConfig',
-    'operators.apps.OperatorsConfig',
+    'vendors.apps.VendorsConfig',
+    'depots.apps.DepotsConfig',
+    'users.apps.UsersAppConfig',
     'trackers.apps.TrackersConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -87,7 +88,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
 MIGRATION_MODULES = {
-    'sites': 'shippers_owned_container_tracker.contrib.sites.migrations'
+    'sites': 'mysite.contrib.sites.migrations'
 }
 
 # AUTHENTICATION
@@ -246,9 +247,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = 'shippers_owned_container_tracker.users.adapters.AccountAdapter'
+ACCOUNT_ADAPTER = 'mysite.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = 'shippers_owned_container_tracker.users.adapters.SocialAccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'mysite.users.adapters.SocialAccountAdapter'
 
 
 # Your stuff...

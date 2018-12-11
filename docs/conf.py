@@ -182,7 +182,7 @@ latex_elements = {
 latex_documents = [
     (
         "index",
-        "shippers_owned_container_tracker.tex",
+        "mysite.tex",
         "Centrans SOC Tracker Documentation",
         """Bryan Galindo""",
         "manual",
@@ -217,7 +217,7 @@ latex_documents = [
 man_pages = [
     (
         "index",
-        "shippers_owned_container_tracker",
+        "mysite",
         "Centrans SOC Tracker Documentation",
         ["""Bryan Galindo"""],
         1,
@@ -236,7 +236,7 @@ man_pages = [
 texinfo_documents = [
     (
         "index",
-        "shippers_owned_container_tracker",
+        "mysite",
         "Centrans SOC Tracker Documentation",
         """Bryan Galindo""",
         "Centrans SOC Tracker",

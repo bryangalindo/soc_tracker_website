@@ -1,7 +1,7 @@
 import pytest
 
-from shippers_owned_container_tracker.users.forms import UserCreationForm
-from shippers_owned_container_tracker.users.tests.factories import UserFactory
+from mysite.users.forms import UserCreationForm
+from mysite.users.tests.factories import UserFactory
 
 pytestmark = pytest.mark.django_db
 
